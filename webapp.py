@@ -3,6 +3,8 @@ import  functions
 
 todos = functions.get_todos()
 
+st.set_page_config(layout="wide")
+
 def add_todo():
     todo_local = st.session_state["new_todo"]
     # if todo_local not in todos and todo_local:
@@ -11,9 +13,11 @@ def add_todo():
     st.session_state["new_todo"] = ""
 
 
-st.title("My to-do app.")
-st.subheader("This is my to-do app.")
-st.write("This app is to increase your productivity")
+st.title("My To-Do App.")
+st.subheader("Below you can add things that you plan to do.")
+st.write("This app can be used to <b>increase your productivity</b>.",
+         unsafe_allow_html=True)
+
 
 for index, todo in enumerate(todos):
     checkbox = st.checkbox(todo, key=f"{index}.{todo}")
