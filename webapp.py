@@ -2,6 +2,7 @@ import streamlit as st
 import  functions
 
 todos = functions.get_todos()
+
 def add_todo():
     todo_local = st.session_state["new_todo"]
     # if todo_local not in todos and todo_local:
